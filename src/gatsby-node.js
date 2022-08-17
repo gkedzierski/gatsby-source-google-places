@@ -16,7 +16,7 @@ const resolvePlace = async ({ apiKey, placeId, language, createNode }) => {
   delete placeNode.reviews
   createNode(placeNode);
   
-  place.reviews.forEach(review => {
+  place.reviews?.forEach(review => {
     review.id = review.time;
     const placeReviewNode = nodeFactory.reviewNode(review, {
       parent: placeNode.id
